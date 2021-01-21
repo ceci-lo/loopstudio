@@ -15,11 +15,15 @@
     $(function(){
       $(".toggle").on("click", function(){
 
-        if($(".item").hasClass("active")){
+        if( $(".big-contain").hasClass("active") || $(".item").hasClass("active") || $(".logo").hasClass("active") ){
           $(".item").removeClass("active");
+          $(".logo").removeClass("active");
+          $(".big-contain").removeClass("active");
         }
         else{
           $(".item").addClass("active");
+          $('.logo').addClass("active");
+          $('.big-contain').addClass("active");
         }
       })
     })
