@@ -12,7 +12,7 @@ body {
 nav {
   display: flex;
   flex-direction: row;
-  padding-bottom: 12%;
+  padding-bottom: 40%;
 }
 
 .list li {
@@ -22,12 +22,18 @@ nav {
 }
 .logo {
   padding: 0% 0% 50% 0%;
-  font-size: 32px;
+  font-size: 34px;
   background-image: url("../images/logo.svg");
   background-repeat: no-repeat;
 }
-
+a:hover {
+  text-decoration: underline;
+}
 /*MOBILE BAR*/
+h1 {
+  border: hsl(0, 0%, 100%) solid;
+  font-family: "Montserrat", sans-serif;
+}
 .big-contain {
   background-image: url("../images/mobile/image-hero.jpg");
   background-position: center;
@@ -40,10 +46,20 @@ nav {
   height: 700px;
   padding: 26px;
 }
-
+.list,
+li {
+  font-size: 16px;
+  padding: 15px 5px;
+}
+.list,
+li,
+a {
+  display: block;
+  cursor: pointer;
+}
 .list {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -55,11 +71,21 @@ nav {
 .item {
   order: 3;
   width: 100%;
-  text-align: center;
+
   display: none;
+}
+.item:hover {
+  border-bottom: solid;
 }
 .item.active /* esto trabaja con js haciendo que hamburguer se abra o cierre*/ {
   display: block;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  background-color: hsl(0, 0%, 0%);
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  padding: 2%;
 }
 
 .toggle {
@@ -72,9 +98,10 @@ nav {
   margin: 6px 0;
   width: 18px;
   position: relative;
-}
+} /* Con esta clase se hace la barrita del medi del hamburguer*/
 
-.bars::before .bars::after {
+.bars::before,
+.bars::after /* con esta se hace la de arriba y la de abajo*/ {
   background: hsl(0, 0%, 100%);
   content: "";
   height: 2px;
@@ -106,16 +133,22 @@ nav {
   }
 }
 
+/*Desk Menu*/
 @media all and (min-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 8%;
+  }
   .titulo-web {
     display: inline-block;
   }
   h1 {
-    width: 100%;
-    padding: 5% 0% 5% 0%;
+    width: 300px;
+    font-size: 60px;
+    padding: 5% 200% 20% 20%;
     border: hsl(0, 0%, 100%) solid;
     font-family: "Montserrat", sans-serif;
-    width: 300px;
   }
   .big-contain {
     background-image: url("../images/desktop/image-hero.jpg");
